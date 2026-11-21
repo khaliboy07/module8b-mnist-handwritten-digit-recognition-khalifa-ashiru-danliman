@@ -1,8 +1,95 @@
+# MNIST Handwritten Digit Recognition
 
-services:
-  mnist-streamlit:
-      build: .
-          container_name: mnist-digit-recognition
-              ports:
-                    - "8501:8501"
-                        restart: unless-stopped
+## Project Overview
+This project is an interactive handwritten digit recognition application built using a Convolutional Neural Network (CNN), TensorFlow and Streamlit. It allows users to upload an image of a handwritten digit (0–9) and receive a predicted digit with its confidence score.
+
+## Technology Stack
+- **Python:** Programming language
+- **TensorFlow 2.21.0:** Deep learning framework
+- **Streamlit 1.67.0:** Interactive web application
+- **NumPy:** Numerical processing
+- **Pillow:** Image processing
+- **Docker:** Application containerization
+- **GitHub:** Version control and source code hosting
+- **Streamlit Community Cloud:** Cloud deployment
+
+## Project Structure
+```text
+mnist-digit-recognition/
+├── app.py
+├── mnist_cnn.keras
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+## How to Run the Application Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/khaliboy07/mnist-digit-recognition.git
+```
+
+2. Enter the project directory:
+
+```bash
+cd mnist-digit-recognition
+```
+
+3. Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+5. Open the local URL displayed in your terminal.
+
+## Running with Docker
+
+Ensure Docker and Docker Compose are installed.
+
+Build and start the application:
+
+```bash
+docker compose up --build
+```
+
+Open:
+
+```text
+http://localhost:8501
+```
+
+To stop the container:
+
+```bash
+docker compose down
+```
+
+## How to Use the Application
+
+1. Open the application.
+2. Upload an image containing a handwritten digit.
+3. Click the **Predict Digit** button.
+4. View the processed image.
+5. View the predicted digit, confidence score and prediction probabilities.
+
+## Live Application
+
+https://mnist-digit-recognition-r7i4p3yoq6lnx5lf4agpsa.streamlit.app/
+
+## Source Code
+
+https://github.com/khaliboy07/mnist-digit-recognition
+
+## Conclusion
+
+The project demonstrates the development and deployment of a machine learning application, from integrating a trained CNN model to building an interactive interface, containerizing the application and deploying it to a cloud platform.
